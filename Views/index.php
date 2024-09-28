@@ -15,15 +15,15 @@
                         </p>
                     </div>
                     <div class="login-from">
-                        <form action>
+                        <form action="../models/usermodel.php?action=user_login" method="post">
                                 <div class="mb-3">
                                     <label for="useremail" class="form-label">Email address</label>
-                                    <input type="email" class="form-control" id="useremail" aria-describedby="emailHelp">
+                                    <input type="email" class="form-control" id="loginemail" aria-describedby="emailHelp">
                                     <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                                 </div>
                                 <div class="mb-3">
                                     <label for="userpass" class="form-label">Password</label>
-                                    <input type="password" class="form-control" id="userpass">
+                                    <input type="password" class="form-control" id="loginpass">
                                 </div>
                                 <div class="mb-3 form-check">
                                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -32,7 +32,7 @@
                                 <div class="mb-3 form-check">
                                     <label class="form-check-label" for="">Forgot Password?</label>
                                 </div>
-                                <button type="submit" class="btn btn-primary w-100 rounded-4 fw-bold">Sign In</button>
+                                <button type="submit" name="userlogin" value="loggedin" class="btn btn-primary w-100 rounded-4 fw-bold">Sign In</button>
                                 <label for="" class="text-dark">
                                             Don't have an account? 
                                             <a href="" class="text-dark">Sign up</a>

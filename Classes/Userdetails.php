@@ -23,6 +23,20 @@ class Userinfo {
 
         $stmt->close();
     }
+
+    public function loginUser($loginemail, $loginpass){
+
+        $sel = $this->conn->prepare("SELECT * FROM `userinfo` WHERE `useremail` = '$loginemail' AND 'userpass' = '$loginpass'");
+        
+        if($sel->execute()){
+            echo "Logged in";
+        } else {
+            echo "Check Username and password";
+        }
+
+        $sel->close();
+        
+    }
 }
 ?>
     
