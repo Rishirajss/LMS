@@ -15,7 +15,7 @@
                         </p>
                     </div>
                     <div class="login-from">
-                        <form>
+                        <form action>
                                 <div class="mb-3">
                                     <label for="useremail" class="form-label">Email address</label>
                                     <input type="email" class="form-control" id="useremail" aria-describedby="emailHelp">

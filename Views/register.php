@@ -1,6 +1,6 @@
 <?php
     include './Common/headfile.php';
-    print_r($_POST);
+    // print_r($_POST);
 ?>
     <div class="main d-flex justify-content-center">
             <div class="login-from-div align-self-center">
@@ -13,7 +13,7 @@
                         </p>
                     </div>
                     <div class="login-from">
-                        <form action="../Classes/Userdetails.php" method="post">
+                        <form action="../models/usermodel.php?action=user_create" method="post">
                                 <div class="mb-3">
                                     <label for="username" class="form-label">User Name</label>
                                     <input type="text" class="form-control" id="username" name="username" aria-describedby="usernameHelp">
