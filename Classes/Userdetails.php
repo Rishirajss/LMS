@@ -16,6 +16,7 @@ class Userinfo {
 
         if ($stmt->execute()) {
             echo "Data inserted";
+            echo "<script>window.location.href='../Views/index.php';</script>";
         } else {
             echo "Error inserting data: " . $stmt->error;
         }

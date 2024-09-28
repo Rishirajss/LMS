@@ -1,28 +1,20 @@
-<?php 
-    include '../Classes/Userdetails.php';
+<?php
 
-    $insert = new Userinfo();
-    // print_r($_GET); 
+include '../Classes/Userdetails.php';
 
-    if(isset($_GET['action'])){
-        $action = $_GET['action'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Collect form data
+    $username = trim($_POST['username']);
+    $useremail = trim($_POST['useremail']);
+    $userpass = trim($_POST['userpass']);
+
+    // Basic validation
+    if (!empty($username) && !empty($useremail) && !empty($userpass)) {
+        $userInfo = new Userinfo();
+        $userpassHash = password_hash($userpass, PASSWORD_DEFAULT);
+        $userInfo->createUser($username, $useremail, $userpassHash);
     } else {
-        echo "NO action Found"; 
-        return false;
+        echo "Please fill in all fields.";
     }
-
-    switch($action){
-        case "user_create":
-              $insert_user = $insert->createUser($_POST['username'], $_POST['useremail'], $_POST['userpass']);
-
-              if(!empty($insert_user)){
-                // echo "Data inserted";
-                echo "<script>window.location.href='../Views/index.php</script>"; 
-            } else {
-                echo "Data error";
-                // echo "<script>window.location.href='../register.php?status=0';</script>"; 
-                
-              }
-    }
-
+}
 ?>
